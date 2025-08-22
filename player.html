@@ -13,7 +13,7 @@
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: geometricPrecision;
-    overflow: auto; /* changed from hidden to auto so padding works */
+    overflow: auto; 
   }
 
   body {
@@ -22,7 +22,6 @@
     height: 100%;
   }
 
-  /* Fixed header */
   .now-playing {
     position: fixed;
     top: 0;
@@ -69,14 +68,13 @@
 
   .time { font-size: 12px; opacity: 0.7; }
 
-  /* Scrollable content */
   .track-list-wrapper {
     flex: 1;
     width: 100%;
     display: flex;
     justify-content: center;
     overflow-y: auto;
-    padding: 80px 20px 20px 20px; /* reduced top padding from 120px to 80px */
+    padding: 80px 20px 20px 20px;
     box-sizing: border-box;
   }
 
@@ -129,13 +127,12 @@
     .track .song-info, .track .song-unreleased { font-size: 10px; }
     .play-btn { font-size: 10px; }
     .title-container img { width: 24px; height: 24px; margin-right: 8px; }
-    .track-list-wrapper { padding: 70px 15px 20px 15px; } /* reduced for small screens */
+    .track-list-wrapper { padding: 70px 15px 20px 15px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="now-playing">
   <div class="now-playing-left">
     <div class="title-container">
@@ -146,28 +143,27 @@
   <div class="time"><span id="currentTime">00:00</span> / <span id="totalTime">00:00</span></div>
 </div>
 
-<!-- Scrollable track list -->
 <div class="track-list-wrapper">
   <ul class="track-list">
-    <!-- All your songs -->
-  <li class="track">
+
+    <li class="track">
       <div class="track-info">
         <div class="song-title">DROP_THE_GAME</div>
         <div class="song-info">Produced by NEYKA & PAUL RUCHE</div>
         <div class="song-unreleased">Performed by PAUL RUCHE</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/PAUL RUCHE, NEYKA - DROP THE GAME.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/PAUL RUCHE, NEYKA - DROP THE GAME.mp3" volume="1"></audio>
     </li>
 
-   <li class="track">
+    <li class="track">
       <div class="track-info">
         <div class="song-title">FAKE</div>
         <div class="song-info">Produced by NEYKA</div>
         <div class="song-unreleased">Performed by PAUL RUCHE</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/FAKE - PAUL RUCHE, NEYKA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/FAKE - PAUL RUCHE, NEYKA.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -177,9 +173,8 @@
         <div class="song-unreleased">Performed by MARAI</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/RUNNING OUT OF TIME - MARAI, NEYKA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/RUNNING OUT OF TIME - MARAI, NEYKA.mp3" volume="1"></audio>
     </li>
-
 
     <li class="track">
       <div class="track-info">
@@ -188,7 +183,7 @@
         <div class="song-unreleased">Performed by ANGELS CRY</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/THE GAME - NEYKA, ANGELS CRY.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/THE GAME - NEYKA, ANGELS CRY.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -198,10 +193,8 @@
         <div class="song-unreleased">Performed by PABLOTEODIO & ANGELS CRY</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/DONDE ESTOY - PABLOTEODIO, ANGELS CRY.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/DONDE ESTOY - PABLOTEODIO, ANGELS CRY.mp3" volume="1"></audio>
     </li>
-
-  
 
     <li class="track">
       <div class="track-info">
@@ -210,7 +203,7 @@
         <div class="song-unreleased">Performed by PAUL RUCHE</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/PAUL RUCHE - KENSES GROOVE NEYKA REWORK.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/PAUL RUCHE - KENSES GROOVE NEYKA REWORK.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -220,7 +213,7 @@
         <div class="song-unreleased">Performed by 03NATE</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/NATE 03, NEYKA - QUE PASO.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/NATE 03, NEYKA - QUE PASO.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -230,7 +223,7 @@
         <div class="song-unreleased">Performed by NEYKA</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/SATIRA - NEYKA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/SATIRA - NEYKA.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -240,7 +233,7 @@
         <div class="song-unreleased">Performed by ERRE TRES, 03NATE & REY-KI</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/PARAISO - ERRE TRES, NATO03 REYKI.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/PARAISO - ERRE TRES, NATO03 REYKI.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -250,7 +243,7 @@
         <div class="song-unreleased">Performed by PAUL RUCHE, ARES D, REY-KI & MITCH DAKOTA</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/QUIERO MAS - PAUL RUCHE, ARES D, REY-KI, MITCH DAKOTA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/QUIERO MAS - PAUL RUCHE, ARES D, REY-KI, MITCH DAKOTA.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -260,7 +253,7 @@
         <div class="song-unreleased">Performed by DEVIN TRACY</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/WATCHING ME DANCE NEYKA REWORK.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/WATCHING ME DANCE NEYKA REWORK.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -270,7 +263,7 @@
         <div class="song-unreleased">Performed by CARMEN MALOUF</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/HOLD ME TIGHT CARMEN NEYKA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/HOLD ME TIGHT CARMEN NEYKA.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -280,7 +273,7 @@
         <div class="song-unreleased">Performed by ARES D</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/REA-NEYKA_ARES_V3_MIX5.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/REA-NEYKA_ARES_V3_MIX5.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -290,7 +283,7 @@
         <div class="song-unreleased">Performed by 03NATE & ERRE TRES</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio src="AUDIO_FILES/CCLQH_BEATSWITCH.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/CCLQH_BEATSWITCH.mp3" volume="1"></audio>
     </li>
 
     <div class="disclaimer">© 2025 ODC Records / Antoine Duran</div>
@@ -310,6 +303,8 @@ tracks.forEach(track => {
   const audio = track.querySelector('audio');
 
   btn.addEventListener('click', () => {
+    if (!audio.src) audio.src = audio.getAttribute('data-src');
+
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
