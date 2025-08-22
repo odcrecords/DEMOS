@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ODC</title>
+  <!-- Courier Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #000;
+      font-family: 'Courier Prime', monospace;
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
+      position: relative;
+    }
+
+    /* Top-right clock */
+    .clock {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      text-align: right;
+      font-family: 'Courier Prime', monospace;
+      line-height: 1.2;
+      user-select: none;
+    }
+    .clock .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+    .clock .time {
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Centered clickable image */
+    main {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      flex-direction: column;
+    }
+
+    a.image-link { display: inline-block; }
+    a.image-link div {
+      background: #ffffff;
+      display: inline-block;
+      border-radius: 20px;
+      padding: 0;
+    }
+    a.image-link img {
+      width: 240px;
+      height: 240px;
+      display: block;
+      object-fit: contain;
+      border-radius: 20px;
+      transition: transform 160ms ease;
+      background: none;
+      image-rendering: pixelated;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+    }
+    a.image-link:hover img,
+    a.image-link:focus img { transform: scale(1.03); }
+
+    /* Responsive for mobile */
+    @media (max-width: 480px) {
+      a.image-link img {
+        width: 150px;
+        height: 150px;
+      }
+      .clock .label { font-size: 8px; }
+      .clock .time { font-size: 10px; }
+    }
+
+    /* Bottom legal disclaimer */
+    .disclaimer {
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top-right dual clock -->
+  <div class="clock" aria-live="polite">
+    <div class="block">
+      <div class="label">Mexico City</div>
+      <div class="time" id="mx"></div>
+    </div>
+    <div class="block" style="margin-top: 6px;">
+      <div class="label">Paris</div>
+      <div class="time" id="paris"></div>
+    </div>
+  </div>
+
+  <!-- Centered clickable image leading to the player page -->
+  <main>
+    <a href="player.html" class="image-link" aria-label="Open the music player">
+      <div>
+        <img alt="Enter — open the music player" src="FOLDER.PNG">
+      </div>
+    </a>
+  </main>
+
+  <!-- Bottom legal disclaimer -->
+  <div class="disclaimer">© 2025 ODC Records / Antoine Duran</div>
+
+  <script>
+    function fmt(date, timeZone) {
+      return new Intl.DateTimeFormat('en-GB', {
+        timeZone,
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      }).format(date);
+    }
+    function tick() {
+      const now = new Date();
+      document.getElementById('mx').textContent = fmt(now, 'America/Mexico_City');
+      document.getElementById('paris').textContent = fmt(now, 'Europe/Paris');
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
