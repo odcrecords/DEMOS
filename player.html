@@ -110,6 +110,8 @@
     margin-left: 10px;
   }
 
+  .pause-btn { font-family: Helvetica, sans-serif; }
+
   audio { display: none; }
 
   .disclaimer {
@@ -176,14 +178,14 @@
       <audio data-src="AUDIO_FILES/RUNNING OUT OF TIME - MARAI, NEYKA.mp3" volume="1"></audio>
     </li>
 
-    <li class="track">
+ <li class="track">
       <div class="track-info">
-        <div class="song-title">THE_GAME</div>
-        <div class="song-info">Produced by NEYKA</div>
-        <div class="song-unreleased">Performed by ANGELS CRY</div>
+        <div class="song-title">QUIERO_MÁS</div>
+        <div class="song-info">Produced by NEYKA, PAUL RUCHE & ARES D</div>
+        <div class="song-unreleased">Performed by PAUL RUCHE, ARES D, REY-KI & MITCH</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio data-src="AUDIO_FILES/THE GAME - NEYKA, ANGELS CRY.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/QUIERO MAS - PAUL RUCHE, ARES D, REY-KI, MITCH DAKOTA.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -216,15 +218,16 @@
       <audio data-src="AUDIO_FILES/NATE 03, NEYKA - QUE PASO.mp3" volume="1"></audio>
     </li>
 
-    <li class="track">
+  <li class="track">
       <div class="track-info">
-        <div class="song-title">SATIRA</div>
+        <div class="song-title">(A)MARTE</div>
         <div class="song-info">Produced by NEYKA</div>
-        <div class="song-unreleased">Performed by NEYKA</div>
+        <div class="song-unreleased">Performed by ARES D</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio data-src="AUDIO_FILES/SATIRA - NEYKA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/REA-NEYKA_ARES_V3_MIX5.mp3" volume="1"></audio>
     </li>
+
 
     <li class="track">
       <div class="track-info">
@@ -236,14 +239,14 @@
       <audio data-src="AUDIO_FILES/PARAISO - ERRE TRES, NATO03 REYKI.mp3" volume="1"></audio>
     </li>
 
-    <li class="track">
+     <li class="track">
       <div class="track-info">
-        <div class="song-title">QUIERO_MÁS</div>
-        <div class="song-info">Produced by NEYKA, PAUL RUCHE & ARES D</div>
-        <div class="song-unreleased">Performed by PAUL RUCHE, ARES D, REY-KI & MITCH DAKOTA</div>
+        <div class="song-title">THE_GAME</div>
+        <div class="song-info">Produced by NEYKA</div>
+        <div class="song-unreleased">Performed by ANGELS CRY</div>
       </div>
       <a class="play-btn">▶ Play</a>
-      <audio data-src="AUDIO_FILES/QUIERO MAS - PAUL RUCHE, ARES D, REY-KI, MITCH DAKOTA.mp3" volume="1"></audio>
+      <audio data-src="AUDIO_FILES/THE GAME - NEYKA, ANGELS CRY.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -256,6 +259,16 @@
       <audio data-src="AUDIO_FILES/WATCHING ME DANCE NEYKA REWORK.mp3" volume="1"></audio>
     </li>
 
+  <li class="track">
+      <div class="track-info">
+        <div class="song-title">SATIRA</div>
+        <div class="song-info">Produced by NEYKA</div>
+        <div class="song-unreleased">Performed by NEYKA</div>
+      </div>
+      <a class="play-btn">▶ Play</a>
+      <audio data-src="AUDIO_FILES/SATIRA - NEYKA.mp3" volume="1"></audio>
+    </li>
+
     <li class="track">
       <div class="track-info">
         <div class="song-title">HOLD_ME_TIGHT</div>
@@ -264,16 +277,6 @@
       </div>
       <a class="play-btn">▶ Play</a>
       <audio data-src="AUDIO_FILES/HOLD ME TIGHT CARMEN NEYKA.mp3" volume="1"></audio>
-    </li>
-
-    <li class="track">
-      <div class="track-info">
-        <div class="song-title">(A)MARTE</div>
-        <div class="song-info">Produced by NEYKA</div>
-        <div class="song-unreleased">Performed by ARES D</div>
-      </div>
-      <a class="play-btn">▶ Play</a>
-      <audio data-src="AUDIO_FILES/REA-NEYKA_ARES_V3_MIX5.mp3" volume="1"></audio>
     </li>
 
     <li class="track">
@@ -314,7 +317,7 @@ tracks.forEach(track => {
     if (audio.paused) {
       audio.currentTime = 0;
       audio.play();
-      btn.innerHTML = '<b>II</b> Pause';
+      btn.innerHTML = '<b class="pause-btn">II</b> Pause';
       currentAudio = audio;
       currentTitle.textContent = track.querySelector('.song-title').textContent;
       diskGif.classList.add('spinning');
